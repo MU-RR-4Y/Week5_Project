@@ -46,18 +46,21 @@ countries = country_repo.select_all() #working
 for country in countries:
     print(country.__dict__)
 
-# country = country_repo.select(2)
-# print(country.__dict__)
+country = country_repo.select(2)
+print(country.__dict__)
 
-# country_repo.delete(3)
-# country_repo.save(country_3)
+country_repo.delete(3)
+country_repo.save(country_3)
 
 
 # TEST Destination
 
 destination_repo.save(destination_1)  # working
 destination_repo.save(destination_2)  
-destination_repo.save(destination_4)  
+destination_repo.save(destination_3)  
+destination_repo.save(destination_4) 
+destination_repo.save(destination_1) 
+ 
 
 dest1 = destination_repo.select_all() # working
 print(dest1[0].__dict__)  

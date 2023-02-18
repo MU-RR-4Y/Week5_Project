@@ -1,7 +1,9 @@
 from flask import Flask, render_template, redirect, request
-
+from controllers.country_controller import countries_blueprrnt
 
 app = Flask(__name__)
+
+app.register_blueprint(countries_blueprrnt)
 
 
 @app.route('/')
