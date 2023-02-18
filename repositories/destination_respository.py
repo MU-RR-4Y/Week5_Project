@@ -1,12 +1,12 @@
-from pdb import Pdb
 from db.run_sql import run_sql
 from models.destination import Destination
+import repositories.country_repository as country_repo
 
 def save(destination):
-    sql = '''INSERT INTO destinations (name, information)
-          VALUES (%s, %s)
+    sql = '''INSERT INTO destinations (name, country_id, information)
+          VALUES (%s, %s, %s)
           RETURNING id'''
-    values = [destination.name, destination.information]
+    values = [destination.name, destination.country.id,destination.information]
     result = run_sql(sql, values)
     destination.id = result[0]['id']
     return destination
@@ -21,9 +21,11 @@ def select_all():
     sql = '''SELECT * FROM destinations'''
     results = run_sql(sql)
     for result in results:
-        destination = Destination(result['name'], result['information'], result['id'])
+        country = country_repo.select(result['country_id'])
+        destination = Destination(result['name'], country, result['information'], result['id'])
         destinations.append(destination)
     return destinations
+    
 
 def select(id):
     destination = None
@@ -32,7 +34,8 @@ def select(id):
     results = run_sql(sql, values)
     if results is not None:
         result = results[0]
-        destination = Destination(result['name'],result['information'],id)
+        country = country_repo.select(result['country_id'])
+        destination = Destination(result['name'], country, result['information'],id)
     return destination
 
 def delete(id):

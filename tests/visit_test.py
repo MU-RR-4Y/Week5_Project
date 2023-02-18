@@ -5,7 +5,7 @@ from models.user import User
 
 class TestVisit(unittest.TestCase):
     def setUp(self):
-        self.destination = Destination('Rome', 'Capital of Italy')
+        self.destination = Destination('Rome', 'Italy','Capital of Italy')
         self.user = User('Dave')
         self.visit = Visit(self.user, self.destination,'20/01/2023', 4, 'Rome was amazing')
 

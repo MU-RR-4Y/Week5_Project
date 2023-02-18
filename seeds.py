@@ -10,14 +10,14 @@ import repositories.destination_respository as destination_repo
 import repositories.user_repository as user_repo
 import repositories.visit_repository as visit_repo
 
-destination_1 = Destination('Rome', 'Home of the Romans')
-destination_2 = Destination('Florence', 'Home of the Medici')
-destination_3 = Destination('Paris', 'Capital of France')
-destination_4 = Destination('Walt Disney World', 'Disney park in Orlando')
+country_1 = Country('Italy')
+country_2 = Country('France')
+country_3 = Country('America')
 
-country_1 = Country('Italy',[destination_1, destination_2])
-country_2 = Country('France', destination_3)
-country_3 = Country('America', destination_4)
+destination_1 = Destination('Rome', country_1,'Home of the Romans')
+destination_2 = Destination('Florence', country_1, 'Home of the Medici')
+destination_3 = Destination('Paris', country_2,'Capital of France')
+destination_4 = Destination('Walt Disney World',country_3, 'Disney park in Orlando')
 
 user_1 = User('Dave')
 user_2 = User('John')
@@ -32,7 +32,25 @@ visit_3 = Visit(user_1,destination_2,'23/01/2023',5,'Florence was amazing')
 visit_4 = Visit(user_4,destination_4,'09/02/2023',3,'The magic kingdom was great')
 
 # DROP tables
+country_repo.delete_all() #working
 destination_repo.delete_all() # working
+
+
+# TEST Country
+
+country_repo.save(country_1) #working
+country_repo.save(country_2)
+country_repo.save(country_3)
+
+countries = country_repo.select_all() #working
+for country in countries:
+    print(country.__dict__)
+
+# country = country_repo.select(2)
+# print(country.__dict__)
+
+# country_repo.delete(3)
+# country_repo.save(country_3)
 
 
 # TEST Destination
@@ -50,13 +68,6 @@ print(dest2.__dict__)
 destination_repo.delete(1) # working
 
 
-
-
-# TEST Country
-
-country_repo.save()
-country_repo.save()
-country_repo.save()
 
 
 

@@ -4,8 +4,8 @@ from models.destination import Destination
 
 class TestUser(unittest.TestCase):
     def setUp(self):
-        self.destination_1 = Destination('Rome', 'Capital of Italy')
-        self.destination_2 = Destination('Paris', 'Capital of France')
+        self.destination_1 = Destination('Rome', 'Italy', 'Capital of Italy')
+        self.destination_2 = Destination('Paris', 'France','Capital of France')
         self.user = User('Dave')
 
 
