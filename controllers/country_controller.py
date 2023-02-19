@@ -4,10 +4,10 @@ from models.country import Country
 import repositories.country_repository as country_repo
 import repositories.destination_respository as destination_repo
 
-countries_blueprrnt = Blueprint('countries', __name__)
+countries_blueprint = Blueprint('countries', __name__)
 
 # INDEX ('/') GET
-@countries_blueprrnt.route('/countries')
+@countries_blueprint.route('/countries')
 def countries():
     destination_list = []
     destinations = destination_repo.select_all()
@@ -20,6 +20,8 @@ def countries():
 
 
 # NEW ('/new') GET
+
+
 # CREATE ('/') POST
 # SHOW ('/id') GET
 # EDIT ('/id/edit') GET
