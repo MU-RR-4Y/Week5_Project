@@ -5,11 +5,13 @@
         {% for user in users %}
             <li>
                 <p>Name: {{user.name}}</p>
-                <p> ID: {{user.id}}</p>
                 <ul>
                     {% for item in user.wishlist %}
-                        
-                        <li>{{item}}</li>
+                        {% for destination in destinations %}
+                            {% if item == destination.id %}
+                            <li>{{destination.name}}</li>
+                            {% endif %}
+                        {% endfor %}
                     {% endfor %}
                 </ul>
             </li>
