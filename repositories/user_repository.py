@@ -17,11 +17,23 @@ def select_all():
     sql = '''SELECT * FROM users'''
     results = run_sql(sql)
     for result in results:
-        wishlist = result['wish_list']
+        wish_list = result['wish_list']
         visited_list = result['visited_list']
-        user = User(result['name'],wishlist,visited_list, result['id'])
+        user = User(result['name'], result['id'])
+        user.wishlist = wish_list
+        user.visited_list = visited_list
         users.append(user)
-    return users
+    return users 
+
+def select(id):
+    user = None
+    sql = "SELECT * FROM users WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+    if result is not None:
+        user = User(result['name'], result['wish_list'], result['visited_list'], result['id'] )
+    return user
+
 
 
 def delete_all():
