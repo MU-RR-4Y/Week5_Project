@@ -78,7 +78,6 @@ print(dest1[0].__dict__)
 dest2 = destination_repo.select(3) # working
 print(dest2.__dict__) 
 
-destination_repo.delete(1) # working
 
 
 # TEST Users
@@ -91,16 +90,49 @@ user_1.add_to_visited_list(destination_4.id)
 
 user_2.add_to_wishlist(destination_5.id)
 user_2.add_to_wishlist(destination_3.id)
+user_2.add_to_visited_list(destination_1.id)
+
+user_3.add_to_wishlist(destination_6.id)
+user_3.add_to_wishlist(destination_2.id)
+user_3.add_to_wishlist(destination_3.id)
+user_3.add_to_visited_list(destination_1.id)
+user_3.add_to_visited_list(destination_4.id)
+
+user_4.add_to_wishlist(destination_1.id)
+user_4.add_to_wishlist(destination_5.id)
+user_4.add_to_wishlist(destination_4.id)
+user_4.add_to_visited_list(destination_2.id)
+user_4.add_to_visited_list(destination_6.id)
+
+user_5.add_to_wishlist(destination_3.id)
+user_5.add_to_wishlist(destination_1.id)
+user_5.add_to_wishlist(destination_2.id)
+user_5.add_to_visited_list(destination_6.id)
+user_5.add_to_visited_list(destination_4.id)
+
+user_6.add_to_wishlist(destination_5.id)
+user_6.add_to_wishlist(destination_2.id)
+user_6.add_to_wishlist(destination_4.id)
+user_6.add_to_visited_list(destination_1.id)
+user_6.add_to_visited_list(destination_6.id)
 
 
 user_repo.save(user_1)
 user_repo.save(user_2)
-# user_repo.save(user_3)
-# user_repo.save(user_4)
-# user_repo.save(user_5)
-# user_repo.save(user_6)
+user_repo.save(user_3)
+user_repo.save(user_4)
+user_repo.save(user_5)
+user_repo.save(user_6)
 
 
+
+
+# TEST VISITS
+
+visit_repo.save(visit_1)
+visit_repo.save(visit_2)
+visit_repo.save(visit_3)
+visit_repo.save(visit_4)
 
 
 pdb.set_trace()
