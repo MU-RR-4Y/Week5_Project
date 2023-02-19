@@ -7,6 +7,14 @@ import repositories.destination_respository as destination_repo
 destinations_blueprint = Blueprint('destinations', __name__)
 
 # INDEX ('/') GET
+@destinations_blueprint.route('/destinations')
+def destinations():
+    destinations = destination_repo.select_all()
+    countries = country_repo.select_all()
+    
+
+    return render_template('destinations/index.html', destinations = destinations, countries = countries )
+
 # NEW ('/new') GET
 # CREATE ('/') POST
 # SHOW ('/id') GET

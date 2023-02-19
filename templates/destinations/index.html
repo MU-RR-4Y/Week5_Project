@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <ul>
+        {% for destination in destinations %}
+            <li>
+                <p>Name : {{destination.name}}</p>
+                {% for  country in countries %}
+                    {% if destination.country.id == country.id  %}
+                        <p>Country : {{country.name}}</p>
+                    {% endif %}
+                {% endfor %}
+                <p>Information : {{destination.information}}</p>
+
+            </li>
+            
+        {% endfor %}
+
+
+
+
+    </ul>
+  
+{% endblock content %}
