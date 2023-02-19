@@ -18,6 +18,13 @@ destination_1 = Destination('Rome', country_1,'Home of the Romans')
 destination_2 = Destination('Florence', country_1, 'Home of the Medici')
 destination_3 = Destination('Paris', country_2,'Capital of France')
 destination_4 = Destination('Walt Disney World',country_3, 'Disney park in Orlando')
+destination_5 = Destination('New York',country_3, 'The city that never sleeps')
+destination_6 = Destination('Hollywood',country_3, 'Home of movies')
+destination_7 = Destination('Indianapolis Motor Speedway',country_3, 'The Racing Capital Of The World')
+
+
+
+
 
 user_1 = User('Dave')
 user_2 = User('John')
@@ -59,7 +66,9 @@ destination_repo.save(destination_1)  # working
 destination_repo.save(destination_2)  
 destination_repo.save(destination_3)  
 destination_repo.save(destination_4) 
-destination_repo.save(destination_1) 
+destination_repo.save(destination_5) 
+destination_repo.save(destination_6) 
+destination_repo.save(destination_7) 
  
 
 dest1 = destination_repo.select_all() # working
