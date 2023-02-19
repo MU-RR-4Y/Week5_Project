@@ -97,6 +97,7 @@ user_repo.save(user_4)
 user_repo.save(user_5)
 user_repo.save(user_6)
 
+user_test = user_repo.select_all()
 
 
 pdb.set_trace()

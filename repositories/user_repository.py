@@ -26,7 +26,9 @@ def select_all():
     sql = '''SELECT * FROM users'''
     results = run_sql(sql)
     for result in results:
-        user = User(result['name'],result['id'])
+        wishlist =result['wish_list']
+        visited_list = result['visited_list']
+        user = User(result['name'],wishlist,visited_list, result['id'])
         users.append(user)
     return users
 

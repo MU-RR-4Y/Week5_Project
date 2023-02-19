@@ -1,8 +1,8 @@
 class User:
-    def __init__(self, name, id = None):
+    def __init__(self, name, wishlist = [], visited_list = [], id = None):
         self.name = name
-        self.wishlist = []
-        self.visited_list =[]
+        self.wishlist = wishlist
+        self.visited_list = visited_list
         self.id = id
 
     def add_to_wishlist(self,destination):
