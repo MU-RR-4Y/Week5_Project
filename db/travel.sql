@@ -18,8 +18,8 @@ CREATE TABLE destinations(
 CREATE TABLE users(
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    wish_list TEXT[],
-    visited_list TEXT[]
+    wish_list INT[],
+    visited_list INT[]
 );
 
 CREATE TABLE visits(

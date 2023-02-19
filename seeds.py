@@ -83,12 +83,15 @@ destination_repo.delete(1) # working
 
 # TEST Users
 
-user_1.add_to_wishlist(destination_1)
+user_1.add_to_wishlist(destination_2)
 user_1.add_to_wishlist(destination_3)
 user_1.add_to_wishlist(destination_5)
-
 user_1.add_to_visited_list(destination_6)
 user_1.add_to_visited_list(destination_4)
+
+user_2.add_to_wishlist(destination_5)
+user_2.add_to_wishlist(destination_3)
+
 
 user_repo.save(user_1)
 user_repo.save(user_2)
@@ -97,7 +100,7 @@ user_repo.save(user_4)
 user_repo.save(user_5)
 user_repo.save(user_6)
 
-user_test = user_repo.select_all()
+
 
 
 pdb.set_trace()

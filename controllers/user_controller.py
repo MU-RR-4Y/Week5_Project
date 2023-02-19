@@ -12,7 +12,14 @@ users_blueprint = Blueprint('users', __name__)
 def users():
     users = user_repo.select_all()
     destinations =destination_repo.select_all()
-    return render_template('users/index.html', destinations = destinations, users = users )
+    for user in users:
+        wishlist_id = user.wishlist
+        pass
+        wishlist = wishlist_id
+    
+
+
+    return render_template('users/index.html', destinations = destinations, users = users, wishlist = wishlist )
 
 # NEW ('/new') GET
 
@@ -21,5 +28,6 @@ def users():
 # EDIT ('/id/edit') GET
 # UPDATE ('/id') POST
 # DELETE ('/id/delete') POST
+
 
 

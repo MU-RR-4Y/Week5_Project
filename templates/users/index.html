@@ -5,11 +5,17 @@
         {% for user in users %}
             <li>
                 <p>Name: {{user.name}}</p>
-                    {% for id in user.wishlist %}
-                        <p>{{id}}</p>
+                <p> ID: {{user.id}}</p>
+                <ul>
+                    {% for item in wishlist %}
+                        
+                        <li>{{item}}</li>
                     {% endfor %}
-               
+                </ul>
             </li>
+            
         {% endfor %}        
     </ul>
 {% endblock content %}
+
+
