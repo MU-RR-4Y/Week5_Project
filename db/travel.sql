@@ -18,8 +18,8 @@ CREATE TABLE destinations(
 CREATE TABLE users(
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    wish_list INT NOT NULL REFERENCES destinations(id) ON DELETE CASCADE,
-    vistied_list INT NOT NULL REFERENCES destinations(id) ON DELETE CASCADE
+    wish_list TEXT[],
+    visited_list TEXT[]
 );
 
 CREATE TABLE visits(

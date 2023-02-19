@@ -41,6 +41,7 @@ visit_4 = Visit(user_4,destination_4,'09/02/2023',3,'The magic kingdom was great
 # DROP tables
 country_repo.delete_all() #working
 destination_repo.delete_all() # working
+user_repo.delete_all()
 
 
 # TEST Country
@@ -80,8 +81,21 @@ print(dest2.__dict__)
 destination_repo.delete(1) # working
 
 
+# TEST Users
 
+user_1.add_to_wishlist(destination_1)
+user_1.add_to_wishlist(destination_3)
+user_1.add_to_wishlist(destination_5)
 
+user_1.add_to_visited_list(destination_6)
+user_1.add_to_visited_list(destination_4)
+
+user_repo.save(user_1)
+user_repo.save(user_2)
+user_repo.save(user_3)
+user_repo.save(user_4)
+user_repo.save(user_5)
+user_repo.save(user_6)
 
 
 
