@@ -5,6 +5,7 @@
         {% for user in users %}
             <li>
                 <p>Name: {{user.name}}</p>
+                <p>Destinations on Wish List</p>
                 <ul>
                     {% for item in user.wishlist %}
                         {% for destination in destinations %}
@@ -14,6 +15,18 @@
                         {% endfor %}
                     {% endfor %}
                 </ul>
+
+                <p>Destinations on Visited</p>
+                <ul>
+                    {% for item in user.visited_list %}
+                        {% for destination in destinations %}
+                            {% if item == destination.id %}
+                            <li>{{destination.name}}</li>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+
             </li>
             
         {% endfor %}        
