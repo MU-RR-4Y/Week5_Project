@@ -4,4 +4,15 @@ class Destination:
         self.country = country
         self.information = information
         self.id = id
-        
+        self.wishlisted = []
+        self.visited_by =[]
+
+    def add_to_wishlisted(self, user):
+        self.wishlisted.append(user)
+
+    def remove_from_wishlisted(self, user):
+        self.wishlisted.remove(user)
+
+    def add_to_visited(self, user):
+        self.visited_by.append(user)
+

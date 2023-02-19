@@ -9,3 +9,15 @@ def save(visit):
     result = run_sql(sql, values)
     visit.id = result[0]['id']
     return visit
+
+def select_all():
+    visits =[]
+    sql = '''SELECT * FROM visits'''
+    results = run_sql(sql)
+    for result in results:
+        user = user_repo.select(int(result['user_id']))
+        destination =destination_repo.select(int(result['destination_id']))
+        visit = Visit(user, destination , result['date'], result['rating'], result['comment'], result['id'])
+        visits.append(visit)
+    return visits 
+

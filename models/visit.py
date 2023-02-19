@@ -5,3 +5,6 @@ class Visit:
         self.date = date
         self.rating = rating
         self.comment = comment
+
+
+

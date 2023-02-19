@@ -82,39 +82,37 @@ print(dest2.__dict__)
 
 # TEST Users
 
-user_1.add_to_wishlist(destination_2.id)
+user_1.add_to_wishlist(destination_1.id)
 user_1.add_to_wishlist(destination_3.id)
-user_1.add_to_wishlist(destination_5.id)
-user_1.add_to_visited_list(destination_6.id)
-user_1.add_to_visited_list(destination_4.id)
+user_1.add_to_wishlist(destination_6.id)
+user_1.add_to_visited_list(destination_3.id)
+user_1.add_to_visited_list(destination_2.id)
 
 user_2.add_to_wishlist(destination_5.id)
 user_2.add_to_wishlist(destination_3.id)
-user_2.add_to_visited_list(destination_1.id)
+
 
 user_3.add_to_wishlist(destination_6.id)
 user_3.add_to_wishlist(destination_2.id)
 user_3.add_to_wishlist(destination_3.id)
 user_3.add_to_visited_list(destination_1.id)
-user_3.add_to_visited_list(destination_4.id)
+
 
 user_4.add_to_wishlist(destination_1.id)
 user_4.add_to_wishlist(destination_5.id)
-user_4.add_to_wishlist(destination_4.id)
-user_4.add_to_visited_list(destination_2.id)
-user_4.add_to_visited_list(destination_6.id)
+user_4.add_to_wishlist(destination_2.id)
+user_4.add_to_visited_list(destination_4.id)
+
 
 user_5.add_to_wishlist(destination_3.id)
 user_5.add_to_wishlist(destination_1.id)
 user_5.add_to_wishlist(destination_2.id)
-user_5.add_to_visited_list(destination_6.id)
-user_5.add_to_visited_list(destination_4.id)
+
 
 user_6.add_to_wishlist(destination_5.id)
 user_6.add_to_wishlist(destination_2.id)
 user_6.add_to_wishlist(destination_4.id)
-user_6.add_to_visited_list(destination_1.id)
-user_6.add_to_visited_list(destination_6.id)
+
 
 
 user_repo.save(user_1)
